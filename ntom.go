@@ -19,7 +19,8 @@ import (
 )
 
 func main() {
-	topS := color.NewRGBStyle(color.RGB(0, 0, 0), color.RGB(200, 255, 200))
+    l := log.New(os.Stderr, "", 0)
+    topS := color.NewRGBStyle(color.RGB(0, 0, 0), color.RGB(200, 255, 200))
 	matchS := color.NewRGBStyle(color.RGB(255, 120, 0), color.RGB(255, 255, 255))
 	filePath := os.Args[1]
 	ln, _ := strconv.Atoi(os.Args[2])
@@ -37,7 +38,7 @@ func main() {
 		if fs, err := os.Stat(relDir + filePath); err == nil && fs.IsDir() == false {
 			filePath = relDir + filePath
 		} else {
-			log.Fatalln("ntom: File supplied did not exist or is a directory.")
+			l.Fatalln("ntom: File supplied did not exist or is a directory.")
 		}
 	}
 	Println(filePath)
@@ -46,7 +47,7 @@ func main() {
 	//Println() // The color would leak with Printf
 	var fileBytes, err = ioutil.ReadFile(filePath)
 	if err != nil {
-		log.Fatal(err)
+		l.Fatal(err)
 	}
 	fileLines := strings.Split(string(fileBytes), "\n")
 	if ln != 0 {
