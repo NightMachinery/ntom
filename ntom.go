@@ -30,14 +30,14 @@ func main() {
 		relDir = os.Args[4] + "/"
 	}
 	prevLines := 6
-	afterLines := 15
+	afterLines := 60
 	//Printf("ln %v\nmatch %v\nfile %v\n", ln, match, filePath)
 
-	if _, err := os.Stat(filePath); err != nil {
-		if _, err := os.Stat(relDir + filePath); err == nil {
+	if fs, err := os.Stat(filePath); err != nil || fs.IsDir() {
+		if fs, err := os.Stat(relDir + filePath); err == nil && fs.IsDir() == false {
 			filePath = relDir + filePath
 		} else {
-			log.Fatalln("ntom: File supplied did not exist.")
+			log.Fatalln("ntom: File supplied did not exist or is a directory.")
 		}
 	}
 	Println(filePath)
@@ -49,10 +49,10 @@ func main() {
 		log.Fatal(err)
 	}
 	fileLines := strings.Split(string(fileBytes), "\n")
-	if ln != 1 {
+	if ln != 0 {
 		ps := ln - prevLines
-		if ps < 1 {
-			ps = 1
+		if ps < 0 {
+			ps = 0
 		}
 		Println(strings.Join(fileLines[ps:ln], "\n"))
 	}

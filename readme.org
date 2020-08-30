@@ -1,0 +1,14 @@
+#+TITLE: ntom
+
+This is a helper tool that I use with my search scripts.
+
+#+BEGIN_SRC
+ntom <file-path> <line-number-of-match> <match-text> [<cwd>]
+#+END_SRC
+
+Here are some screenshots:
+[[file:readme.org_imgs/20200830_044809_63v806.png]]
+
+[[file:readme.org_imgs/20200830_045347_Nta6jf.png]]
+
+Unfortunately, the search scripts need some refactoring to be easily usable by other people. But they live at [[https://github.com/NightMachinary/.shells/blob/master/scripts/zsh/interactive/fuzzy/notes-search.zsh]] if you're interested.
