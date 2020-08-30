@@ -1,5 +1,10 @@
 #+TITLE: ntom
 
+* Installation
+#+BEGIN_SRC
+go get -u -v github.com/NightMachinary/ntom
+#+END_SRC
+* Usage
 This is a helper tool that I use with my search scripts.
 
 #+BEGIN_SRC
