@@ -1,4 +1,4 @@
-/// 2>/dev/null ; gorun "$0" "$@" ; exit $?
+/// 2>/dev/null ; exec gorun "$0" "$@"
 
 package main
 
