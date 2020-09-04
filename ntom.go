@@ -38,6 +38,7 @@ func main() {
 		if fs, err := os.Stat(relDir + filePath); err == nil && fs.IsDir() == false {
 			filePath = relDir + filePath
 		} else {
+            // Println(match)
 			l.Fatalln("ntom: File supplied did not exist or is a directory.")
 		}
 	}
