@@ -17,3 +17,7 @@ Here are some screenshots:
 [[file:readme.org_imgs/20200830_045347_Nta6jf.png]]
 
 Unfortunately, the search scripts need some refactoring to be easily usable by other people. But they live at [[https://github.com/NightMachinary/.shells/blob/master/scripts/zsh/interactive/fuzzy/notes-search.zsh]] if you're interested.
+
+* Licenses
+
+Dual-licensed under MIT and GPL v3 or later.
