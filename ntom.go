@@ -56,10 +56,13 @@ func main() {
 			l.Fatalln("ntom: File supplied did not exist or is a directory.")
 		}
 	}
-	Println(filePath)
-	topS.Println(match)
-	Println()
-	//Println() // The color would leak with Printf
+
+	if true || mode == 0 { // fzf will still mis-identify the scrolling position with `+{2}-/2` and these extra lines off, so we might as well have them
+		Println(filePath)
+		topS.Println(match)
+		Println()
+		//Println() // The color would leak with Printf
+	}
 	fileBytes, err := ioutil.ReadFile(filePath)
 	if err != nil {
 		l.Fatal(err)
