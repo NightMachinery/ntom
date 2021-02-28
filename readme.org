@@ -8,7 +8,7 @@ go get -u -v github.com/NightMachinary/ntom
 This is a helper tool that I use with my search scripts.
 
 #+BEGIN_SRC
-ntom <file-path> <line-number-of-match> <match-text> [<cwd>]
+ntom <file-path> <line-number-of-match> <match-text> [<cwd> <mode>]
 #+END_SRC
 
 Here are some screenshots:
