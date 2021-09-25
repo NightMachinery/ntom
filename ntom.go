@@ -49,11 +49,12 @@ func main() {
 	//Printf("ln %v\nmatch %v\nfile %v\n", ln, match, filePath)
 
 	if fs, err := os.Stat(filePath); err != nil || fs.IsDir() {
-		if fs, err := os.Stat(relDir + filePath); err == nil && fs.IsDir() == false {
-			filePath = relDir + filePath
+		absPath := relDir + filePath
+		if fs, err := os.Stat(absPath); err == nil && fs.IsDir() == false {
+			filePath = absPath
 		} else {
 			// Println(match)
-			l.Fatalln("ntom: File supplied did not exist or is a directory.")
+			l.Fatalln("ntom: File supplied did not exist or is a directory.\n\t relDir: " + relDir + "\n\t filePath: " + filePath)
 		}
 	}
 
